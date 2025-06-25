@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "title": "Samsung Galaxy A55 5G",
+    "description": "Celular desbloqueado 256GB 8GB RAM",
+    "price": 439,
+    "stock": 50,
+    "seller": "Tienda oficial Samsung",
+    "image_url": "/static/img/galaxy-a55.jpg",
+    "payment_methods": ["Visa", "OCA", "Efectivo"],
+    "warranty": "1 año de garantía oficial"
+  }
+]
