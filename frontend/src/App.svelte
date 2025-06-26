@@ -134,12 +134,18 @@
 </main>
 
 <style>
+  /* Set the background color of the body to white for the entire page */
+  body {
+    background-color: white;
+  }
+
   /* General Layout */
   main {
     font-family: sans-serif;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    background-color: white; /* Ensure main content area is also white */
   }
 
   .product-detail-container {
