@@ -7,11 +7,18 @@ from fastapi.staticfiles import StaticFiles
 
 
 app = FastAPI()
+'''
+Here is the path where is the data product
+
+'''
 DATA_PATH = "data/products.json"
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
+'''
+This is the 
 
+'''
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5173"],  # Puerto por defecto de Vite
