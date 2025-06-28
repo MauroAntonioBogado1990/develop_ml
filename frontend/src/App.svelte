@@ -13,6 +13,7 @@
     color: str;
     seller: string;
     image_url: string;
+    image_related: string;
     payment_methods: string[];
     warranty: string;
     description_detail: str;
@@ -49,7 +50,11 @@
 </script>
 <header class="main-header">
   <div class="header-content">
-   
+   <button class="link-button" on:click={handleButtonClick}>
+        Volver al listado</button>/<button class="link-button" on:click={handleButtonClick}>
+        Celulares y Telefonía</button>><button class="link-button" on:click={handleButtonClick}>
+        Celulares y Smartphones</button>><button class="link-button" on:click={handleButtonClick}>
+        Samsung</button> 
   </div>
 </header>
 
@@ -68,7 +73,7 @@
   <!-- Columna 2: Información -->
   <div class="product-info">
     <button class="link-button" on:click={handleButtonClick}>
-      Visita la Tienda Oficial de {product.seller}
+      Visita la {product.seller}
     </button>
     <h1 class="product-title">{product.title}</h1>
 
@@ -80,7 +85,8 @@
     <div class="seller-info">
       <p>Vendido por: <strong>{product.seller}</strong></p>
       <button class="link-button" on:click={handleButtonClick}>
-        Ver más productos de {product.seller}
+        Ver medio de pago y promociones
+        
       </button>
     </div>
 
@@ -102,7 +108,10 @@
               <li><strong>Memoria Interna:</strong> {product.intern_memory}</li>
             
         </ul>
-     
+         <button class="link-button" on:click={handleButtonClick}>
+         Ver características
+        
+      </button>
   </div>
 
   <!-- Columna 3: Acciones -->
@@ -121,18 +130,45 @@
 
       <button class="buy-now-button">Comprar ahora</button>
       <button class="add-to-cart-button">Agregar al carrito</button>
+      <p class="product-actions-p">Tienda: {product.seller}<br/><strong>+5mil ventas</strong><br/>
+      <button class="link-button" on:click={handleButtonClick}>
+        Devoluvión gratis</button> Tienes 30 días desde que lo recibes.<br/>
+        <button class="link-button" on:click={handleButtonClick}>
+        Compra protegida</button> Recibe el producto que esperabas o te devolvemos tu dinero.<br/>
+        1 año de garantía de fábrica  
+      </p>
+      
     </div>
+     <div class="info-store">
+      <p><strong>{product.brand}</strong><br/>
+      <strong>{product.seller}</strong><br/>
+       <button class="link-button" on:click={handleButtonClick}>
+       Ver 3 opciones desde {product.price}
+      </button>
+          </p>
+              
+    </div>
+    <div class="options-buy">
+      <p><strong>Otras opciones de compra </strong><br/>
+       <button class="link-button" on:click={handleButtonClick}>
+       Ver 3 opciones desde {product.price}
+      </button>
+          </p>
+              
+    </div>
+    
   </div>
+  
 </div>
 
     <!-- Related Products Section (as seen in PDF) -->
     <section class="related-products">
-      <h2>Productos relacionados</h2>
+      <h2 >Productos relacionados</h2>
       <div class="product-grid">
         <!-- You'd fetch and loop through related products here -->
         <!-- For now, placeholder divs -->
         <div class="related-product-card">
-          <img src="/static/img/placeholder.jpg" alt="Related Product 1" />
+          <img src={product.image_related} alt="Related Product 1" />
           <p>Producto relacionado 1</p>
           <p>US$ XXX</p>
         </div>
@@ -163,7 +199,7 @@
               <li><strong>Descripción:</strong> {product.description}</li>
               <li><strong>Stock disponible:</strong> {product.stock} unidades</li>
               <li><strong>Garantía:</strong> {product.warranty}</li>
-              <!-- Add other details like RAM, storage if they were in your product data -->
+              
             </ul>
     </div>
     <section class="description-details-section">
@@ -183,7 +219,7 @@
     background-color: white;
   }
   .main-header {
-  background-color: #ffeb3b;
+  background-color:rgb(235, 233, 224);
   padding: 12px 24px;
   display: flex;
   align-items: center;
@@ -331,7 +367,7 @@ p, ul,  li{
 
   /* Removed unused CSS for .payment-methods a and .payment-methods a:hover */
 
-  .product-actions {
+  .product-actions  {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -340,6 +376,42 @@ p, ul,  li{
     border: 2px solid #999;
     border-radius: 8px;
     padding: 16px; 
+    max-width: 300px;
+    width: 100%;
+
+  }
+  .product-actions-p{
+    color:  #999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .options-buy  {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 2px solid #999;
+    border-radius: 8px;
+    padding: 16px; 
+    max-width: 300px;
+    width: 100%;
+
+  }
+  .info-store  {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 2px solid #999;
+    border-radius: 8px;
+    padding: 16px; 
+    max-width: 300px;
+    width: 100%;
 
   }
 

@@ -14,6 +14,7 @@ class Product(BaseModel):
     color: str
     seller: str
     image_url: str  # Esto valida que sea una URL válida
+    image_related:str
     payment_methods: List[str]
     warranty: str   
     description_detail: str
