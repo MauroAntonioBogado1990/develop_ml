@@ -43,6 +43,11 @@
     // In a real application, you'd implement navigation or other actions here.
   }
 </script>
+<header class="main-header">
+  <div class="header-content">
+   
+  </div>
+</header>
 
 <main>
   {#if loading}
@@ -83,15 +88,7 @@
           <button class="add-to-cart-button">Agregar al carrito</button>
         </div>
 
-        <div class="additional-details">
-          <h3>Características del producto</h3>
-          <ul>
-            <li><strong>Descripción:</strong> {product.description}</li>
-            <li><strong>Stock disponible:</strong> {product.stock} unidades</li>
-            <li><strong>Garantía:</strong> {product.warranty}</li>
-            <!-- Add other details like RAM, storage if they were in your product data -->
-          </ul>
-        </div>
+        
       </div>
     </div>
 
@@ -127,7 +124,15 @@
         </div>
       </div>
     </section>
-
+    <div class="additional-details">
+          <h3>Características del producto</h3>
+            <ul>
+              <li><strong>Descripción:</strong> {product.description}</li>
+              <li><strong>Stock disponible:</strong> {product.stock} unidades</li>
+              <li><strong>Garantía:</strong> {product.warranty}</li>
+              <!-- Add other details like RAM, storage if they were in your product data -->
+            </ul>
+        </div>
   {:else}
     <p>Producto no encontrado.</p>
   {/if}
@@ -138,7 +143,30 @@
   body {
     background-color: white;
   }
+  .main-header {
+  background-color: #ffeb3b;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+ 
 
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+.main-header h1 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+  
   /* General Layout */
   main {
     font-family: sans-serif;
