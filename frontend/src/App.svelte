@@ -6,12 +6,16 @@
     id: number;
     title: string;
     description: string;
+    old_price: float
     price: number;
     stock: number;
+    brand: str;
+    color: str;
     seller: string;
     image_url: string;
     payment_methods: string[];
     warranty: string;
+    description_detail: str;
   };
 
   let product: Product | null = null;
@@ -56,41 +60,70 @@
     <p class="error">Error: {error}</p>
   {:else if product}
     <div class="product-detail-container">
-      <div class="product-images">
-        <img src={product.image_url} alt={product.title} class="main-image" />
-        <!-- You can add more image thumbnails here if you had an array of images -->
-      </div>
+  <!-- Columna 1: Imagen -->
+  <div class="product-images">
+    <img src={product.image_url} alt={product.title} class="main-image" />
+  </div>
 
-      <div class="product-info">
-        <h1 class="product-title">{product.title}</h1>
-        <p class="product-price">US$ {product.price}</p>
+  <!-- Columna 2: Información -->
+  <div class="product-info">
+    <button class="link-button" on:click={handleButtonClick}>
+      Visita la Tienda Oficial de {product.seller}
+    </button>
+    <h1 class="product-title">{product.title}</h1>
 
-        <div class="seller-info">
-          <p>Vendido por: <strong>{product.seller}</strong></p>
-          <!-- Changed to button element to remove href attribute warnings -->
-          <button class="link-button" on:click={handleButtonClick}>Ver más productos de {product.seller}</button>
-        </div>
-
-        <div class="payment-methods">
-          <h3>Métodos de pago</h3>
-          <div class="payment-icons">
-            {#each product.payment_methods as method}
-              <!-- You would replace this with actual icons/images for each payment method -->
-              <span class="payment-method-icon">{method}</span>
-            {/each}
-          </div>
-          <!-- Changed to button element to remove href attribute warnings -->
-          <button class="link-button" on:click={handleButtonClick}>Conocer más sobre formas de pago</button>
-        </div>
-
-        <div class="product-actions">
-          <button class="buy-now-button">Comprar ahora</button>
-          <button class="add-to-cart-button">Agregar al carrito</button>
-        </div>
-
-        
-      </div>
+    {#if product.old_price}
+      <p class="old-price">US$ {product.old_price}</p>
+    {/if}
+    <p class="product-price">US$ {product.price}</p>
+    
+    <div class="seller-info">
+      <p>Vendido por: <strong>{product.seller}</strong></p>
+      <button class="link-button" on:click={handleButtonClick}>
+        Ver más productos de {product.seller}
+      </button>
     </div>
+
+    <div class="payment-methods">
+      <h3>Métodos de pago</h3>
+      <div class="payment-icons">
+        {#each product.payment_methods as method}
+          <span class="payment-method-icon">{method}</span>
+        {/each}
+      </div>
+      <button class="link-button" on:click={handleButtonClick}>
+        Conocer más sobre formas de pago
+      </button>
+    </div>
+    <p>Color: <strong>{product.color}</strong><br/>
+       <strong>Lo que tienes que saber del producto</strong><br/> </p> 
+        <ul>
+              <li><strong>Memoria Ram:</strong> {product.memory}</li>
+              <li><strong>Memoria Interna:</strong> {product.intern_memory}</li>
+            
+        </ul>
+     
+  </div>
+
+  <!-- Columna 3: Acciones -->
+  <div class="product-actions-column">
+    <div class="product-actions">
+      <p>Envío gratis a todo el pais<br/>Conocé los tiempos y formas de pago <br/>
+       <button class="link-button" on:click={handleButtonClick}>
+        Calcular cuando llega
+      </button>
+          </p>
+      {#if product.stock > 0}
+      <p><strong>Stock disponible</strong></p>
+    {:else}
+      <p><strong>Sin stock</strong></p>
+    {/if}
+
+      <button class="buy-now-button">Comprar ahora</button>
+      <button class="add-to-cart-button">Agregar al carrito</button>
+    </div>
+  </div>
+</div>
 
     <!-- Related Products Section (as seen in PDF) -->
     <section class="related-products">
@@ -132,7 +165,13 @@
               <li><strong>Garantía:</strong> {product.warranty}</li>
               <!-- Add other details like RAM, storage if they were in your product data -->
             </ul>
-        </div>
+    </div>
+    <section class="description-details-section">
+    <div class="description-details">
+          <h3>Descripción</h3>
+             <p class="product-description-details">{product.description_detail}</p>
+    </div>
+     </section>
   {:else}
     <p>Producto no encontrado.</p>
   {/if}
@@ -151,6 +190,11 @@
   border-bottom: 1px solid #ddd;
 }
  
+p, ul,  li{
+  text-align: left;
+
+  color: #333;
+}
 
 
 .header-content {
@@ -166,6 +210,23 @@
   color: #333;
 }
 
+.old-price {
+  font-size: 20px;
+  color: #999;
+  text-decoration: line-through;
+  margin-bottom: 5px;
+}
+
+.product-detail-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 0.8fr;
+  gap: 30px;
+  align-items: start;
+  max-width: 1200px;
+  width: 100%;
+  background-color: white;
+
+}
   
   /* General Layout */
   main {
@@ -215,6 +276,8 @@
     color: #333;
     margin-bottom: 20px;
   }
+  
+  
 
   .seller-info {
     border-bottom: 1px solid #eee;
@@ -274,6 +337,10 @@
     gap: 10px;
     margin-top: 30px;
     margin-bottom: 30px;
+    border: 2px solid #999;
+    border-radius: 8px;
+    padding: 16px; 
+
   }
 
   .buy-now-button,
@@ -320,6 +387,23 @@
     margin-bottom: 8px;
     font-size: 15px;
     color: #555;
+  }
+  
+  .description-details {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  .description-details p h3{
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .description-details-section {
+    margin-top: 40px;
+    border-top: 1px solid #eee;
+    padding-top: 30px;
   }
 
   /* Related Products and Samsung Products Sections */

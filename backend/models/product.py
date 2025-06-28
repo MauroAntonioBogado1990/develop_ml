@@ -6,8 +6,14 @@ class Product(BaseModel):
     title: str
     description: str
     price: float
-    stock: int
+    old_price: float
+    stock: int  
+    brand: str
+    memory:str
+    intern_memory: str
+    color: str
     seller: str
     image_url: str  # Esto valida que sea una URL válida
     payment_methods: List[str]
     warranty: str   
+    description_detail: str

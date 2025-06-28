@@ -4,10 +4,16 @@
     "title": "Samsung Galaxy A55 5G",
     "description": "Celular desbloqueado 256GB 8GB RAM",
     "price": 439,
+    "old_price":499,
     "stock": 50,
+    "brand": "Samsung",
+    "memory":"8 GB Ram",
+    "intern_memory": "256 GB",
+    "color": "Azul Oscuro",
     "seller": "Tienda oficial Samsung",
     "image_url": "http://localhost:8000/static/img/galaxy-a55.jpg",
     "payment_methods": ["Visa", "OCA", "Efectivo"],
-    "warranty": "1 año de garantía oficial"
+    "warranty": "1 año de garantía oficial",
+    "description_detail":"Fotografía profesional en tu bolsillo\nDescubrí infinitas posibilidades para tus fotos con las 3 cámaras principales de tu equipo. Poné a prueba tu creatividad y jugá con la iluminación, diferentes planos y efectos para obtener grandes resultados.\n\nAdemás, el dispositivo cuenta con cámara frontal de 8 Mpx para que puedas sacarte divertidas selfies o hacer videollamadas.\n\nMayor rendimiento\nSu memoria RAM de 4 GB permite que tu smartphone funcione de manera fluida y sin demoras al realizar distintas tareas, jugar o navegar.\n\nDesbloqueo veloz con tu huella dactilar\nCon el sensor de huella dactilar, el acceso es seguro y podrás desbloquearlo automáticamente con un toque."
   }
 ]
