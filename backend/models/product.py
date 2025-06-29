@@ -13,7 +13,7 @@ class Product(BaseModel):
     intern_memory: str
     color: str
     seller: str
-    image_url: str  # Esto valida que sea una URL válida
+    image_url: str 
     image_related:str
     payment_methods: List[str]
     warranty: str   
