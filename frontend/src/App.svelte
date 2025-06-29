@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
 
   // Define the Product type
+  // define the product
   type Product = {
     id: number;
     title: string;
