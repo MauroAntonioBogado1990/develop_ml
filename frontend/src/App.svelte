@@ -17,8 +17,9 @@
     payment_methods: string[];
     warranty: string;
     description_detail: str;
-    related_products: string[] ;
-    same_brand_products: string[];
+    product_related: str ;
+    price_related: float;
+    
   };
 
   let product: Product | null = null;
@@ -87,10 +88,10 @@
     {#if product.old_price}
       <p class="old-price">US$ {product.old_price}</p>
     {/if}
-    <p class="product-price">US$ {product.price}</p>
-    
+    <p class="product-price">US$ {product.price}<span class="discount">12% off</span></p>
+    <p>en <span class="discount">10 cuotas de $ 1.914° sin interés</span></p>
     <div class="seller-info">
-      <p>Vendido por: <strong>{product.seller}</strong></p>
+      
       <button class="link-button" on:click={handleButtonClick}>
         Ver medio de pago y promociones
         
@@ -99,8 +100,8 @@
 
     <img src={product.image_url} alt={product.title} class="product-thumbnail" />
 
-    <p>Color: <strong>{product.color}</strong><br/>
-       <strong>Lo que tienes que saber del producto</strong><br/> </p> 
+    <p>Color: <strong>{product.color}</strong><br/></p>
+       <strong>Lo que tienes que saber del producto</strong><br/> 
         <ul>
               <li><strong>Memoria Ram:</strong> {product.memory}</li>
               <li><strong>Memoria Interna:</strong> {product.intern_memory}</li>
@@ -110,7 +111,10 @@
          Ver características
         
       </button>
-
+     
+     <p>Opciones de Compra:<br/>
+      <button class="link-button" on:click={handleButtonClick}>
+       3 productos nuevos desde US$ {product.price}</p>
       
 
   </div>
@@ -118,7 +122,7 @@
   <!-- Columna 3: Acciones -->
   <div class="product-actions-column">
     <div class="product-actions">
-      <p>Envío gratis a todo el pais<br/>Conocé los tiempos y formas de pago <br/>
+      <p><span class="discount">Envío gratis</span> a todo el pais<br/>Conocé los tiempos y formas de pago <br/>
        <button class="link-button" on:click={handleButtonClick}>
         Calcular cuando llega
       </button>
@@ -180,9 +184,9 @@
       <div class="product-grid">
         
         <div class="related-product-card">
-          
-          <p>Producto relacionado 1</p>
-          <p>US$ XXX</p>
+          <img src={product.image_related} alt="Related Product 2" />
+          <p>{product.product_related}</p>
+          <p>US$ {product.price_related}</p>
         </div>
         <div class="related-product-card">
           <img src="/static/img/placeholder.jpg" alt="Related Product 2" />

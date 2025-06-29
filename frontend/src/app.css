@@ -104,6 +104,11 @@ button:focus-visible {
   body {
     background-color: white;
   }
+  .discount {
+  color: rgb(23, 216, 23);
+  font-weight: 600;
+  margin-left: 8px;
+}
   .main-header {
   background-color:rgb(235, 233, 224);
   padding: 12px 24px;

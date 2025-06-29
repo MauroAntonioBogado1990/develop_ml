@@ -18,4 +18,5 @@ class Product(BaseModel):
     payment_methods: List[str]
     warranty: str   
     description_detail: str
-
+    product_related: str
+    price_related : float
