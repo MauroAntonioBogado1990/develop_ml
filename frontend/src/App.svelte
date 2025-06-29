@@ -97,7 +97,8 @@
       </button>
     </div>
 
-    
+    <img src={product.image_url} alt={product.title} class="product-thumbnail" />
+
     <p>Color: <strong>{product.color}</strong><br/>
        <strong>Lo que tienes que saber del producto</strong><br/> </p> 
         <ul>
@@ -177,8 +178,7 @@
 <section class="related-products">
       <h2 >Productos relacionados</h2>
       <div class="product-grid">
-        <!-- You'd fetch and loop through related products here -->
-        <!-- For now, placeholder divs -->
+        
         <div class="related-product-card">
           
           <p>Producto relacionado 1</p>
