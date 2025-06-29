@@ -200,7 +200,7 @@
         </div>
       </div>
     </section>
-    <!-- Related Products Section (as seen in PDF) -->
+   
 
 
     <!-- Samsung Products Section (as seen in PDF) -->
@@ -237,6 +237,5 @@
   {/if}
 </main>
 
-<style>
- 
-</style>
+ <!--El etile css se envcuentra en un archivo adjunto llamado app.css -->}
+ <!--The CSS style is in an attached file call app.css-->
