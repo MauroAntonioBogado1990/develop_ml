@@ -55,6 +55,7 @@
   }
 </script>
 <header class="main-header">
+
   <div class="header-content">
    <button class="link-button" on:click={handleButtonClick}>
         Volver al listado</button>/<button class="link-button" on:click={handleButtonClick}>
