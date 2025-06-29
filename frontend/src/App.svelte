@@ -14,11 +14,15 @@
     seller: string;
     image_url: string;
     image_related: string;
+    image_related2: string;
+    image_related3: string;
     payment_methods: string[];
     warranty: string;
     description_detail: str;
     product_related: str ;
     price_related: float;
+    price_related2: float;
+    price_related3: float;
     
   };
 
@@ -189,9 +193,9 @@
           <p>US$ {product.price_related}</p>
         </div>
         <div class="related-product-card">
-          <img src="/static/img/placeholder.jpg" alt="Related Product 2" />
-          <p>Producto relacionado 2</p>
-          <p>US$ YYY</p>
+          <img src={product.image_related2} alt="Related Product 3" />
+          <p>{product.product_related2}</p>
+          <p>US$ {product.price_related2} </p>
         </div>
       </div>
     </section>
@@ -202,12 +206,11 @@
     <section class="samsung-products">
       <h2>Productos de Samsung</h2>
       <div class="product-grid">
-        <!-- You'd fetch and loop through other Samsung products here -->
-        <!-- For now, placeholder divs -->
+      
         <div class="samsung-product-card">
-          <img src="/static/img/placeholder.jpg" alt="Samsung Product 1" />
-          <p>Producto Samsung 1</p>
-          <p>US$ ZZZ</p>
+          <img src={product.image_related3} alt="Samsung Product 1"/>
+          <p>{product.product_related3}</p>
+          <p>US$ {product.price_related3}</p>
         </div>
       </div>
     </section>

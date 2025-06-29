@@ -15,8 +15,14 @@ class Product(BaseModel):
     seller: str
     image_url: str  # Esto valida que sea una URL válida
     image_related:str
+    image_related2:str
+    image_related3:str
     payment_methods: List[str]
     warranty: str   
     description_detail: str
     product_related: str
+    product_related2: str
+    product_related3: str
     price_related : float
+    price_related2 : float
+    price_related3 : float

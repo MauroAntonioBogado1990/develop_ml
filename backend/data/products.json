@@ -13,11 +13,17 @@
     "seller": "Tienda oficial Samsung",
     "image_url": "http://localhost:8000/static/img/galaxy-a55.jpg",
     "image_related":"http://localhost:8000/static/img/samsung-55.jpg",
+    "image_related2":"http://localhost:8000/static/img/motorola.jpg",
+    "image_related3":"http://localhost:8000/static/img/samsungs25.jpg",
     "payment_methods": ["Visa", "OCA", "Efectivo"],
     "warranty": "1 año de garantía oficial",
     "description_detail":"Fotografía profesional en tu bolsillo\nDescubrí infinitas posibilidades para tus fotos con las 3 cámaras principales de tu equipo. Poné a prueba tu creatividad y jugá con la iluminación, diferentes planos y efectos para obtener grandes resultados.\n\nAdemás, el dispositivo cuenta con cámara frontal de 8 Mpx para que puedas sacarte divertidas selfies o hacer videollamadas.\n\nMayor rendimiento\nSu memoria RAM de 4 GB permite que tu smartphone funcione de manera fluida y sin demoras al realizar distintas tareas, jugar o navegar.\n\nDesbloqueo veloz con tu huella dactilar\nCon el sensor de huella dactilar, el acceso es seguro y podrás desbloquearlo automáticamente con un toque.",
     "product_related": "Samsung M55",
-    "price_related" : 495
+    "product_related2": "Motorola Edge 50 Fusion",
+    "product_related3": "Samsung S25",
+    "price_related" : 495,
+    "price_related2" : 455,
+    "price_related3" : 525
   }
 
   
